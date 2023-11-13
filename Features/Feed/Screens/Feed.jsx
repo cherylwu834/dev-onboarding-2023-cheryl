@@ -1,5 +1,6 @@
 import { Button, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
+import Post from './Components';
 
 export default function Feed({ navigation }) {
   const GIVEN_POSTS = [
@@ -27,6 +28,13 @@ export default function Feed({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Posts</Text>
+      {GIVEN_POSTS.map((text) => (
+        <Post
+          key={text._id}
+          username={text.username}
+          body={text.body}
+        />
+      ))}
       <Button
         title="To Landing"
         onPress={navigateToLanding}
