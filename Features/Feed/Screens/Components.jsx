@@ -1,7 +1,6 @@
 import {Button, Text, View } from 'react-native';
 
-function Post({username, body})
-{
+function Post({username, body}) {
   return (
     <View>
       <Text>{username}</Text>
